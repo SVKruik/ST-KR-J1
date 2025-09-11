@@ -5,18 +5,26 @@ public class Main {
         int count = 0;
         Scanner input = new Scanner(System.in);
 
-        System.out.print("Enter how many Fibonacci series to be shown:");
+        System.out.print("Enter how many Fibonacci series to be shown: ");
         count = input.nextInt();
 
         if (count < 0) {
             System.out.println("Error: Enter a positive integer.");
         } else {
             for (int i = 0; i < count; i++) {
-                    System.out.print(fibonacciLoop(i) + " ");
+                // System.out.print((i + 1) + ": " + fibonacciLoop(i) + " \n");
+                System.out.print((i + 1) + ": " + fibonacciRecursive(i) + " \n");
             }
         }
     }
 
+    /**
+     *
+     * Fibonacci series using loop.
+     *
+     * @param number the position in the Fibonacci series.
+     * @return the Fibonacci number at the given position.
+     */
     static int fibonacciLoop(int number) {
         int f_1 = 0, f_2 = 1, f_n = 0;
 
@@ -35,5 +43,23 @@ public class Main {
             }
             return f_n;
         }
+    }
+
+    /**
+     *
+     * Fibonacci series using recursion.
+     *
+     * @param number the position in the Fibonacci series.
+     * @return the Fibonacci number at the given position.
+     */
+    static int fibonacciRecursive(int number) {
+        if (number < 0) {
+            System.out.println("Error: Enter a positive integer.");
+            return -1;
+        } else if (number == 0) {
+            return 0;
+        } else if (number == 1) {
+            return 1;
+        } else return fibonacciRecursive(number - 1) + fibonacciRecursive(number - 2);
     }
 }

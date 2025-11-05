@@ -3,11 +3,15 @@ package com.example.testapp;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
+
 public class MainActivity extends Activity {
     private static final String TAG = "SEOULTECH";
+
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Log.v(TAG, "+++ ON CREATE +++");
+
+        Log.v(TAG, "Student #: 25170175, Name: Stefan Kruik");
     }
     @Override protected void onStart() {
         super.onStart(); Log.v(TAG, "++ ON START ++");
